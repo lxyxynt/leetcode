@@ -1,5 +1,6 @@
-#!/bin/bash
-for name in `ls`
+#!/bin/sh
+for file in `ls | tr " " "\?"`
 do
-	echo $name
+	new=`echo $file | tr "_" " "`
+	mv "$file" "$new"
 done
